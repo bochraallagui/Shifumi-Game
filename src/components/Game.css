@@ -1,0 +1,223 @@
+/* Main game container */
+.game {
+    text-align: center;
+    padding: 50px;
+    font-family: 'Montserrat', sans-serif; /* Updated font family */
+    background: radial-gradient(circle, #e1f154, #e1efbc);
+    color: rgb(45, 42, 42);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Game title */
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+    font-weight: 700; /* Bold for the title */
+}
+
+/* Mode toggle buttons */
+.mode-toggle {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.mode-toggle button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-color: #ff9800;
+    color: white;
+    font-weight: 700; /* Bold for button text */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mode-toggle button:hover {
+    transform: scale(1.1);
+    background-color: #e65100;
+}
+
+.mode-toggle button.active {
+    background-color: #ff5722;
+}
+
+/* Choice buttons */
+.choice-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.choice-button {
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffee58;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-weight: 700; /* Bold for emoji buttons */
+}
+
+.choice-button:hover {
+    transform: scale(1.2);
+    background-color: #fdd835;
+}
+
+.choice-button:disabled {
+    background-color: #bdbdbd;
+    cursor: not-allowed;
+}
+
+/* Results section */
+.results {
+    font-size: 1.8rem;
+    margin-top: 15px;
+}
+
+.results p {
+    margin: 10px 0;
+}
+
+.results .win-message {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00e676;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Scoreboard section */
+.scoreboard {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    color: #333232;
+    width: 300px;
+}
+
+/* Reset button */
+.reset-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 700; /* Bold for impact */
+}
+
+.reset-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.1);
+}
+
+/* Rules Section */
+.rules-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.rules-toggle {
+    padding: 12px 25px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    background-color: #f04b4b;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rules-toggle:hover {
+    background-color: #0e0612;
+    transform: scale(1.1);
+}
+
+.rules-content {
+    margin-top: 20px;
+    background: linear-gradient(145deg, #d2e970, #d9e972);
+    color: #05080b;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+.rules-content h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #34495e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.rules-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.rules-content ul li {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    line-height: 1.8;
+    text-align: left;
+    position:relative;
+    padding-left: 20px;
+}
+
+.rules-content ul li:before {
+    content: "•";
+    font-size: 2rem;
+    color: #cc5d08;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
