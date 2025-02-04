@@ -1,8 +1,7 @@
-/* Main game container */
 .game {
     text-align: center;
     padding: 50px;
-    font-family: 'Montserrat', sans-serif; /* Updated font family */
+    font-family: 'Montserrat', sans-serif; 
     background: radial-gradient(circle, #e1f154, #e1efbc);
     color: rgb(45, 42, 42);
     min-height: 100vh;
@@ -13,15 +12,15 @@
     gap: 20px;
 }
 
-/* Game title */
+
 h1 {
     font-size: 4rem;
     margin-bottom: 20px;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
-    font-weight: 700; /* Bold for the title */
+    font-weight: 700; 
 }
 
-/* Mode toggle buttons */
+
 .mode-toggle {
     display: flex;
     gap: 20px;
@@ -37,7 +36,7 @@ h1 {
     transition: 0.3s ease;
     background-color: #ff9800;
     color: white;
-    font-weight: 700; /* Bold for button text */
+    font-weight: 700; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -50,7 +49,7 @@ h1 {
     background-color: #ff5722;
 }
 
-/* Choice buttons */
+
 .choice-buttons {
     display: flex;
     justify-content: center;
@@ -69,7 +68,7 @@ h1 {
     cursor: pointer;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, background-color 0.3s ease;
-    font-weight: 700; /* Bold for emoji buttons */
+    font-weight: 700; 
 }
 
 .choice-button:hover {
@@ -82,7 +81,7 @@ h1 {
     cursor: not-allowed;
 }
 
-/* Results section */
+
 .results {
     font-size: 1.8rem;
     margin-top: 15px;
@@ -99,7 +98,7 @@ h1 {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Scoreboard section */
+
 .scoreboard {
     margin-top: 20px;
     font-size: 1.5rem;
@@ -112,7 +111,7 @@ h1 {
     width: 300px;
 }
 
-/* Reset button */
+
 .reset-button {
     margin-top: 20px;
     padding: 10px 30px;
@@ -124,7 +123,7 @@ h1 {
     cursor: pointer;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: 700; /* Bold for impact */
+    font-weight: 700; 
 }
 
 .reset-button:hover {
@@ -132,7 +131,7 @@ h1 {
     transform: scale(1.1);
 }
 
-/* Rules Section */
+
 .rules-section {
     margin-top: 40px;
     text-align: center;

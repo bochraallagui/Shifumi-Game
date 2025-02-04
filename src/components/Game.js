@@ -5,6 +5,7 @@ import winSound from '../sounds/win.wav';
 import loseSound from '../sounds/lose.wav';
 import drawSound from '../sounds/draw.wav';
 
+// Defines the choices available in the game with corresponding emojis:
 const choices = {
   rock: { name: 'Rock', emoji: '👊' },
   paper: { name: 'Paper', emoji: '✋' },
@@ -12,20 +13,23 @@ const choices = {
 };
 
 function Game() {
-  const [mode, setMode] = useState('single');
-  const [showRules, setShowRules] = useState(false); // Correctly added this state
-  const [currentTurn, setCurrentTurn] = useState('Player 1');
-  const [player1Choice, setPlayer1Choice] = useState(null);
-  const [player2Choice, setPlayer2Choice] = useState(null);
-  const [result, setResult] = useState('');
-  const [player1Score, setPlayer1Score] = useState(0);
-  const [player2Score, setPlayer2Score] = useState(0);
+  // State hooks to manage the game's dynamic data :
+  const [mode, setMode] = useState('single'); // Game mode: single or multiplayer
+  const [showRules, setShowRules] = useState(false); // Toggle visibility of game rules
+  const [currentTurn, setCurrentTurn] = useState('Player 1'); // Track current player turn in multiplayer
+  const [player1Choice, setPlayer1Choice] = useState(null); // Choice of Player 1
+  const [player2Choice, setPlayer2Choice] = useState(null); // Choice of Player 2 or computer in single mode
+  const [result, setResult] = useState(''); // Result of each round
+  const [player1Score, setPlayer1Score] = useState(0); // Player 1's score
+  const [player2Score, setPlayer2Score] = useState(0); // Player 2's or computer's score
 
+  // Function to play sound effects based on game outcomes:
   const playSound = (sound) => {
     const audio = new Audio(sound);
     audio.play();
   };
 
+  // Handles choice selection by players or against computer :
   const handleChoice = (choiceKey) => {
     const choice = choices[choiceKey];
     if (mode === 'single') {
@@ -45,6 +49,7 @@ function Game() {
     }
   };
 
+  // Updates the score after each choice and determines the round's winner :
   const updateScore = (player1, player2) => {
     const winner = determineWinner(player1, player2);
     setResult(winner);
@@ -59,6 +64,7 @@ function Game() {
     }
   };
 
+  // Determines the winner of a round based on the rules of Rock-Paper-Scissors :
   const determineWinner = (player1, player2) => {
     if (!player2 || player1.name === player2.name) return "It's a draw!";
     if ((player1.name === 'Rock' && player2.name === 'Scissors') ||
@@ -69,6 +75,7 @@ function Game() {
     return currentTurn === 'Player 2' ? 'Player 2 wins!' : 'Player 1 wins!';
   };
 
+// Resets the game to initial state :
   const resetGame = () => {
     setPlayer1Choice(null);
     setPlayer2Choice(null);
@@ -81,7 +88,7 @@ function Game() {
   return (
     <div className="game">
       {result.includes('wins') && <Confetti />}
-      <h1> Welcome to the shifumi game !</h1>
+      <h1>Welcome to the shifumi game!</h1>
       <div className="mode-toggle">
         <button className={mode === 'single' ? 'active' : ''} onClick={() => { setMode('single'); resetGame(); }}>
           Single Player
